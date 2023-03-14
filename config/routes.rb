@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   namespace :api do
+    resources :follows, only: [:create, :destroy]
     jsonapi_resources :sleep_records, only: [:index]
     jsonapi_resources :timesheets, only: [:index] do
       collection do
