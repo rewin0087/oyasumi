@@ -3,4 +3,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  namespace :api do
+    jsonapi_resources :timesheets, only: [:index] do
+      collection do
+        post 'clock-in'
+        post 'clock-out'
+      end
+    end
+  end
 end
