@@ -17,7 +17,7 @@ RSpec.describe FollowUser do
     end
 
     context 'when following dont exist' do
-      let(:follow_user_id) { 3 }
+      let(:follow_user_id) { 10 }
 
       it 'raise error' do
         expect { subject }.to raise_error(ActiveRecord::RecordNotFound)
